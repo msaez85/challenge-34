@@ -11,11 +11,11 @@
  */
 
 class Personas{
-    constructor(nombre, apellido, edad, sexo, peso, altura, añoNacimiento){
+    constructor(nombre, apellido, sexo, peso, altura, añoNacimiento){
         this._dni= parseInt(this.#generaDNI());
         this._nombre = nombre;
         this._apellido = apellido;
-        this._edad = edad;
+        this._edad = new Date().getFullYear() - añoNacimiento;
         this._sexo = sexo;
         this._peso = peso; 
         this._altura = altura;
@@ -85,7 +85,7 @@ class Personas{
     }
 }
 
-let personaNueva = new Personas("priscila belen","garcia moya",24, "F", "100 Kg", "180 cm", 1998);
+let personaNueva = new Personas("priscila belen","garcia moya", "F", "100 Kg", "180 cm", 1998);
 
 personaNueva.mostrarGeneracion();
 document.write('<hr>');
